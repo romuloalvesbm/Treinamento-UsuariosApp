@@ -28,7 +28,7 @@ namespace UsuariosApp.API.Controllers
                 Email: usuario.Email,
                 DataHoraAcesso: DateTime.UtcNow,
                 DataHoraExpiracao: DateTime.UtcNow.AddHours(1),
-                AccessToken: jwtHelper.GenerateToken(usuario.Email)
+                AccessToken: jwtHelper.GenerateToken(usuario.Id.ToString())
             );
 
             return Ok(response);
